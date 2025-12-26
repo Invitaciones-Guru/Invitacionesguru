@@ -1,0 +1,148 @@
+:root {
+    --guru-green: #5a6b54; 
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --gray: #f9f9f9;
+}
+
+body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+/* --- CABECERA (LOGO OPTIMIZADO) --- */
+.main-header {
+    padding: 30px 20px 20px;
+    background: var(--white); 
+    text-align: center;
+}
+
+.logo-display {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.brand-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    transform: scale(1.1); /* Recorta bordes visualmente */
+}
+
+.brand-slogan {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin: 15px 0 5px;
+    font-weight: 400;
+}
+
+.event-versatility { font-size: 0.6rem; color: #999; font-style: italic; }
+
+/* --- BOTÓN WHATSAPP --- */
+.btn-whatsapp-fix {
+    position: fixed; top: 20px; right: 20px; background: var(--black); color: #fff;
+    padding: 10px 18px; font-size: 0.6rem; letter-spacing: 2px; text-decoration: none;
+    z-index: 1000; font-weight: 600; border: 1px solid var(--black); transition: 0.3s;
+}
+.btn-whatsapp-fix:hover { background: #fff; color: var(--black); }
+
+/* --- PRECIOS --- */
+.price-tag {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.featured .price-tag { color: var(--guru-green); font-size: 1.4rem; }
+
+/* --- GRID Y CARDS --- */
+.catalog-wrapper { max-width: 1000px; margin: 0 auto; padding: 20px 20px 100px; }
+.template-section { margin-top: 80px; }
+.template-name { font-family: 'Bodoni Moda', serif; font-size: 2rem; border-bottom: 1px solid #eee; margin-bottom: 30px; }
+
+.package-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+.card { background: var(--white); border: 1px solid #f0f0f0; position: relative; transition: 0.5s ease; opacity: 0; }
+.card.featured { border: 1.5px solid var(--guru-green); }
+
+/* Animaciones AOS */
+[data-aos="fade-up"] { transform: translateY(40px); opacity: 0; }
+[data-aos="fade-down"] { transform: translateY(-40px); opacity: 0; }
+[data-aos="fade-right"] { transform: translateX(-40px); opacity: 0; }
+.aos-animate { opacity: 1 !important; transform: translate(0) !important; transition: all 0.8s ease; }
+
+.card-tag { 
+    position: absolute; top: 15px; left: 15px; font-size: 0.55rem; 
+    background: #000; color: #fff; padding: 6px 12px; z-index: 10; letter-spacing: 1px;
+}
+.card-tag.gold { background: var(--guru-green); }
+
+.card-img { height: 450px; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.card:hover .card-img img { transform: scale(1.05); }
+
+.card-info { padding: 30px 20px; text-align: center; }
+.package-description { font-size: 0.6rem; color: var(--guru-green); font-weight: 600; margin-bottom: 10px; }
+.card-info ul { list-style: none; padding: 0; margin-bottom: 25px; font-size: 0.8rem; color: #555; }
+.extra-cost { font-size: 0.7rem; color: #bbb; font-style: italic; border-top: 1px dashed #eee; margin-top: 10px; padding-top: 10px; }
+
+.btn-view {
+    display: block; padding: 12px; border: 1px solid #000;
+    color: #000; text-decoration: none; font-size: 0.65rem; font-weight: 600; letter-spacing: 2px;
+}
+.btn-view:hover { background: #000; color: #fff; }
+
+.catalog-footer { text-align: center; padding: 40px; font-size: 0.6rem; letter-spacing: 2px; opacity: 0.5; }
+
+/* Móvil */
+@media (max-width: 768px) {
+    .package-grid { grid-template-columns: 1fr; }
+    .btn-whatsapp-fix { top: auto; bottom: 0; right: 0; left: 0; text-align: center; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- BOTÓN DE MÚSICA REFINADO --- */
+.music-wrapper {
+    margin: 15px 0 25px;
+}
+
+.btn-music {
+    background: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-music:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Estado cuando está sonando */
+.is-playing {
+    background: var(--guru-green) !important;
+    border-color: var(--guru-green) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(90, 107, 84, 0.2);
+}
+
+#musicIcon {
+    font-size: 0.7rem;
+}
